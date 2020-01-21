@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2020/1/21 下午2:45
  */
 @RestController
+@RequestMapping("/server")
 public class WelcomeColtroller {
 
     @RequestMapping("/")

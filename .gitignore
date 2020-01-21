@@ -4,4 +4,4 @@
 .mvn/**
 .target
 .target/**
-.*.iml
+*.iml
