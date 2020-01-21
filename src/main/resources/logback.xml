@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <appender name="debug" class="ch.qos.logback.core.FileAppender" >
+    <appender name="debug" class="ch.qos.logback.core.rolling.RollingFileAppender" >
         <file>debug.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logback.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
-            </pattern>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
 
-    <root level="debug">
+    <root level="debug" additivity="false">
         <appender-ref ref="debug" />
     </root>
 </configuration>
