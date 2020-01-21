@@ -1,0 +1,6 @@
+server:
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /var/java
+      pattern: common
